@@ -185,6 +185,15 @@ function _createProductList() {
         },
         {
             href: "#",
+            src: "https://cdn3.riastatic.com/photos/ir/new/auto/photo/opel_astra-k__372442018-620x415x70.jpg",
+            owner: "Суслов Максим Евгеньевич",
+            brand: "Opel",
+            color: "Айс214124он",
+            year: "2022",
+            second_hand: false,
+        },
+        {
+            href: "#",
             src: "img/product/product-3.jpg",
             owner: "Бородай Ян Иванович",
             brand: "BMW",
@@ -396,17 +405,14 @@ function _createFiltersColumn() {
     };
     allBrand();
 
-
     var htmlFilters = filtersTitle.map(function (filterItem) {
-        return ` <div class="filter-item-box">
+        return `<div class="filter-item-box">
                    <input type="checkbox" id="item-${filterItem}" checked>
                    <label for="item-${filterItem}">${filterItem}</label>
-                 </div>`;
+                </div>`;
     });
     const joinFilters = htmlFilters.join('');
 
-
     filterGroup.insertAdjacentHTML("afterbegin", joinFilters);
     console.log(joinFilters);
-
 };
