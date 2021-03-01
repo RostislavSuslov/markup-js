@@ -161,173 +161,194 @@ function _createCatalog() {
 };
 
 function _createProductList() {
-    const listWrapper = document.createElement('div');
-    listWrapper.className = 'list-wrapper';
-    document.querySelector("body").appendChild(listWrapper);
+    const productLoyout = document.createElement('div');
+    productLoyout.className = 'product-layout';
+    document.querySelector("body").appendChild(productLoyout);
 
     let productList = [{
-            owner: "Шумейко Никита Максимович",
+            href: "#",
             src: "img/product/product-1.jpg",
+            owner: "Шумейко Никита Максимович",
             brand: "Suszuki",
             color: "red",
             year: "2010",
             second_hand: false,
         },
         {
-            owner: "Жданов Никодим Львович",
+            href: "#",
             src: "img/product/product-2.jpg",
+            owner: "Жданов Никодим Львович",
             brand: "Mercedes",
             color: "black",
             year: "2015",
             second_hand: false,
         },
         {
-            owner: "Бородай Ян Иванович",
+            href: "#",
             src: "img/product/product-3.jpg",
+            owner: "Бородай Ян Иванович",
             brand: "BMW",
             color: "blue",
             year: "2009",
             second_hand: false,
         },
         {
-            owner: "Маслов Огюст Романович",
+            href: "#",
             src: "img/product/product-4.jpg",
+            owner: "Маслов Огюст Романович",
             brand: "Volkswagen",
             color: "blue",
             year: "2000",
             second_hand: true,
         },
         {
-            owner: "Колобов Зенон Александрович",
+            href: "#",
             src: "img/product/product-5.jpg",
+            owner: "Колобов Зенон Александрович",
             brand: "Волга",
             color: "blue",
             year: "1956",
             second_hand: true,
         },
         {
-            owner: "Щукин Орландо Григорьевич",
+            href: "#",
             src: "img/product/product-6.jpg",
+            owner: "Щукин Орландо Григорьевич",
             brand: "Запопрожец",
             color: "white",
             year: "1968",
             second_hand: true,
         },
         {
-            owner: "Тягай Макар Богданович",
+            href: "#",
             src: "img/product/product-7.jpg",
+            owner: "Тягай Макар Богданович",
             brand: "Mustang",
             color: "green",
             year: "1990",
             second_hand: true,
         },
         {
-            owner: "Мельников Пётр Андреевич",
+            href: "#",
             src: "img/product/product-8.jpg",
+            owner: "Мельников Пётр Андреевич",
             brand: "Volkswagen",
             color: "white",
             year: "2007",
             second_hand: false,
         },
         {
-            owner: "Сирко Илларион Васильевич",
+            href: "#",
             src: "img/product/product-9.jpg",
+            owner: "Сирко Илларион Васильевич",
             brand: "Ford",
             color: "orange",
             year: "2010",
             second_hand: false,
         },
         {
-            owner: "Барановский Фёдор Леонидович",
+            href: "#",
             src: "img/product/product-10.jpg",
+            owner: "Барановский Фёдор Леонидович",
             brand: "DOGE RAM",
             color: "black",
             year: "2017",
             second_hand: false,
         },
         {
-            owner: "Андреев Пётр Леонидович",
+            href: "#",
             src: "img/product/product-11.jpg",
+            owner: "Андреев Пётр Леонидович",
             brand: "Reno",
             color: "brown",
             year: "2012",
             second_hand: false,
         },
         {
-            owner: "Игнатьев Феликс Юхимович",
+            href: "#",
             src: "img/product/product-12.jpg",
+            owner: "Игнатьев Феликс Юхимович",
             brand: "KIA",
             color: "yelow",
             year: "2011",
             second_hand: false,
         },
         {
-            owner: "Филатов Витольд Виталиевич",
+            href: "#",
             src: "img/product/product-13.jpg",
+            owner: "Филатов Витольд Виталиевич",
             brand: "ВАЗ",
             color: "blue",
             year: "1978",
             second_hand: true,
         },
         {
-            owner: "Тарасов Чеслав Виталиевич",
+            href: "#",
             src: "img/product/product-14.jpg",
+            owner: "Тарасов Чеслав Виталиевич",
             brand: "MITSUBISHI OUTLANDER",
             color: "white",
             year: "2020",
             second_hand: false,
         },
         {
-            owner: "Шухевич Чарльз Платонович",
+            href: "#",
             src: "img/product/product-15.jpg",
+            owner: "Шухевич Чарльз Платонович",
             brand: "Audi",
             color: "green",
             year: "2014",
             second_hand: false,
         },
         {
-            owner: "Мухин Зенон Анатолиевич",
+            href: "#",
             src: "img/product/product-16.jpg",
+            owner: "Мухин Зенон Анатолиевич",
             brand: "Audi",
             color: "blue",
             year: "2014",
             second_hand: false,
         },
         {
-            owner: "Котовский Орест Викторович",
+            href: "#",
             src: "img/product/product-17.jpg",
+            owner: "Котовский Орест Викторович",
             brand: "Audi",
             color: "red",
             year: "2014",
             second_hand: false,
         },
         {
-            owner: "Королёв Оскар Львович",
+            href: "#",
             src: "img/product/product-18.jpg",
+            owner: "Королёв Оскар Львович",
             brand: "Ford",
             color: "red",
             year: "2016",
             second_hand: false,
         },
         {
-            owner: "Авдеев Богдан Петрович",
+            href: "#",
             src: "img/product/product-19.jpg",
+            owner: "Авдеев Богдан Петрович",
             brand: "Ford",
             color: "white",
             year: "2010",
             second_hand: true,
         },
         {
-            owner: "Щербаков Фёдор Викторович",
+            href: "#",
             src: "img/product/product-20.jpg",
+            owner: "Щербаков Фёдор Викторович",
             brand: "BMW",
             color: "blue",
             year: "2018",
             second_hand: true,
         },
         {
-            owner: "Голубой Князь",
+            href: "#",
             src: "img/product/product-21.jpg",
+            owner: "Голубой Князь",
             brand: "Афганский Вариант",
             color: "red",
             year: "1965",
@@ -336,21 +357,20 @@ function _createProductList() {
     ];
 
     function creatProductThumb(product) {
-        return `<a class="product-thumb">
+        return `<a href="${product.href}" class="product-thumb">
                     <img src="${product.src}" class="product-img img-fluid">
                     <h4 class="product-brand">${product.brand}</h4>
                     <h5 class="product-owner">Владелец: ${product.owner}</h5>
                     <h6 class="product-color">Цвет: ${product.color}</h6>
                     <p class="product-year">Год выпуска ${product.year}</p>
                     <p class="product-second_hand">Б/У ${product.second_hand}</p>
-                    
                 </a>`;
     };
 
     const templatesProduct = productList.map(product => creatProductThumb(product));
     const htmlProduct = templatesProduct.join(' ');
 
-    listWrapper.insertAdjacentHTML("afterbegin", htmlProduct);
+    productLoyout.insertAdjacentHTML("afterbegin", htmlProduct);
 };
 
 function _createFiltersColumn() {
@@ -360,35 +380,36 @@ function _createFiltersColumn() {
     const filtersTitle = [];
     var productBrand = document.querySelectorAll(".product-brand");
 
-    function  allBrand() {
+    function allBrand() {
         productBrand.forEach(function (title) {
-           var title = title.textContent;
-           filtersTitle.unshift(title);
+            var title = title.textContent;
+            filtersTitle.unshift(title);
         });
-    } allBrand();
-    
-   
+    }
+    allBrand();
+
+
     console.log(filtersTitle);
-    
+
 
 
 
     // var input = [{value:1},{value:2}],
     // result = [];
     // input.forEach(v => result.push({ 'key': v }));
-    
+
     // console.log(result);
     // // output = input.map(value => ({ "key": value }) );
     // console.log(output);
- 
 
 
-var filterItem = `<div class="filter-item">
+
+    var filterItem = `<div class="filter-item">
                          <h3>Бренд</h3>
                   </nav>`;
-//const templatesFilters = productList.map(column => createFilters(column));
+    //const templatesFilters = productList.map(column => createFilters(column));
 
-//  const templatesFilters = productList.map(column => createFilters(column));
-//  const htmlFilters = templatesFilters.join(' ');
-document.querySelector(".list-wrapper").insertAdjacentHTML("afterbegin", filterItem);
+    //  const templatesFilters = productList.map(column => createFilters(column));
+    //  const htmlFilters = templatesFilters.join(' ');
+    document.querySelector(".product-layout").insertAdjacentHTML("afterbegin", filterItem);
 };
