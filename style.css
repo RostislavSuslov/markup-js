@@ -181,18 +181,28 @@ a.product-thumb {
     margin: 15px;
 }
 
-a.product-thumb {}
+a.product-thumb:hover {
+    border: 1px solid var(--link-hover);
+}
 
 .product-layout {
     display: flex;
     flex-wrap: wrap;
 }
 
-.filter-item {
+.filters-container {
     display: flex;
+    flex-direction: column;
     width: 300px;
     padding: 15px;
     margin: 15px;
+    border: 1px solid var(--link-hover);
+
+}
+
+.filter-item-box label,
+.filter-item-box input {
+    cursor: pointer;
 }
 
 /* тень

@@ -374,8 +374,15 @@ function _createProductList() {
 };
 
 function _createFiltersColumn() {
+    const productLoyout = document.querySelector(".product-layout");
     const filtersContainer = document.createElement("div");
     filtersContainer.className = "filters-container";
+
+    const filterGroup = document.createElement("div");
+    filterGroup.className = "filters-group";
+
+    productLoyout.insertBefore(filtersContainer, productLoyout.firstChild);
+    filtersContainer.insertBefore(filterGroup, filtersContainer.firstChild);
 
     const filtersTitle = [];
     var productBrand = document.querySelectorAll(".product-brand");
@@ -383,33 +390,23 @@ function _createFiltersColumn() {
     function allBrand() {
         productBrand.forEach(function (title) {
             var title = title.textContent;
+            title.toString();
             filtersTitle.unshift(title);
         });
-    }
+    };
     allBrand();
 
 
-    console.log(filtersTitle);
+    var htmlFilters = filtersTitle.map(function (filterItem) {
+        return ` <div class="filter-item-box">
+                   <input type="checkbox" id="item-${filterItem}" checked>
+                   <label for="item-${filterItem}">${filterItem}</label>
+                 </div>`;
+    });
+    const joinFilters = htmlFilters.join('');
 
 
+    filterGroup.insertAdjacentHTML("afterbegin", joinFilters);
+    console.log(joinFilters);
 
-
-    // var input = [{value:1},{value:2}],
-    // result = [];
-    // input.forEach(v => result.push({ 'key': v }));
-
-    // console.log(result);
-    // // output = input.map(value => ({ "key": value }) );
-    // console.log(output);
-
-
-
-    var filterItem = `<div class="filter-item">
-                         <h3>Бренд</h3>
-                  </nav>`;
-    //const templatesFilters = productList.map(column => createFilters(column));
-
-    //  const templatesFilters = productList.map(column => createFilters(column));
-    //  const htmlFilters = templatesFilters.join(' ');
-    document.querySelector(".product-layout").insertAdjacentHTML("afterbegin", filterItem);
 };
