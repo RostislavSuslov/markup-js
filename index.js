@@ -2,6 +2,8 @@ function _createAll() {
     _createHeader();
     _createLogo();
     _createNav();
+    _creatWrapper()
+    _creatCatalogLayout();
     _createCatalog();
     // _creatSearch();
     _createProductList();
@@ -159,6 +161,30 @@ function _createCatalog() {
     };
     closeCatalog();
 };
+
+function _creatWrapper() {
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('wrapper');
+    document.querySelector("body").appendChild(wrapper);
+};
+
+function _creatCatalogLayout(){
+    const row = document.createElement('div');
+    row.classList.add('row');
+    document.querySelector(".wrapper").appendChild(row);
+
+    row.insertAdjacentHTML("afterbegin",
+    `
+    <div class="col-lg-4">
+    
+    </div>
+    <div class="col-lg-8">
+        <div>
+        
+        </div>
+    </div>
+    `);
+}
 
 function _createProductList() {
     const productLoyout = document.createElement('div');
@@ -368,11 +394,11 @@ function _createProductList() {
     function creatProductThumb(product) {
         return `<a href="${product.href}" class="product-thumb">
                     <img src="${product.src}" class="product-img img-fluid">
-                    <h4 class="product-brand">${product.brand}</h4>
-                    <h5 class="product-owner">Владелец: ${product.owner}</h5>
-                    <h6 class="product-color">Цвет: ${product.color}</h6>
-                    <p class="product-year">Год выпуска ${product.year}</p>
-                    <p class="product-second_hand">Б/У ${product.second_hand}</p>
+                    <h3 class="product-brand" data-title="Бренды">${product.brand}</h3>
+                    <h4 class="product-owner">Владелец: ${product.owner}</h4>
+                    <h5 class="product-color" data-title="Цвет">Цвет: ${product.color}</h5>
+                    <h6 class="product-year" data-title="Год выпуска">Год выпуска <b>${product.year}</b></h6>
+                    <p class="product-second_hand" data-title="Б/У">Б/У: ${product.second_hand}</p>
                 </a>`;
     };
 
@@ -393,26 +419,50 @@ function _createFiltersColumn() {
     productLoyout.insertBefore(filtersContainer, productLoyout.firstChild);
     filtersContainer.insertBefore(filterGroup, filtersContainer.firstChild);
 
-    const filtersTitle = [];
+    const filtersTitleArr = [];
+    const filtersItemsArr = [];
     var productBrand = document.querySelectorAll(".product-brand");
+
+ 
 
     function allBrand() {
         productBrand.forEach(function (title) {
+           var titleAttr = title.getAttribute("data-title");
+           filtersTitleArr.unshift(titleAttr)
             var title = title.textContent;
             title.toString();
-            filtersTitle.unshift(title);
+            filtersItemsArr.unshift(title);
         });
     };
     allBrand();
 
-    var htmlFilters = filtersTitle.map(function (filterItem) {
+    deleteDabble = filtersTitleArr.filter(function(item, pos) {
+        return filtersTitleArr.indexOf(item) == pos;
+    })
+
+    var filtersTitleArrHtmL = deleteDabble.map(function (filterTitleAttr) {
+        return `<h3 class="filter-tile">
+                   ${filterTitleAttr}
+                </h3>`;
+    });
+    
+    console.log(filtersTitleArrHtmL)
+
+    const joinFiltersTitle = filtersTitleArrHtmL.join(' ');
+
+    filterGroup.insertAdjacentHTML("beforebegin", joinFiltersTitle);
+
+
+    var htmlFilters = filtersItemsArr.map(function (filterItem) {
         return `<div class="filter-item-box">
-                   <input type="checkbox" id="item-${filterItem}" checked>
+                   <input type="checkbox" id="item-${filterItem}"checked>
                    <label for="item-${filterItem}">${filterItem}</label>
                 </div>`;
     });
+
+
     const joinFilters = htmlFilters.join('');
 
     filterGroup.insertAdjacentHTML("afterbegin", joinFilters);
-    console.log(joinFilters);
+   
 };
