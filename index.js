@@ -172,18 +172,12 @@ function _creatCatalogLayout(){
     const row = document.createElement('div');
     row.classList.add('row');
     document.querySelector(".wrapper").appendChild(row);
-
-    row.insertAdjacentHTML("afterbegin",
-    `
-    <div class="col-lg-4">
     
-    </div>
-    <div class="col-lg-8">
-        <div>
-        
-        </div>
-    </div>
-    `);
+    let leftColumn = document.createElement('div');
+    leftColumn.className = 'col-lg-4 left-column';
+    document.querySelector(".wrapper .row").appendChild(leftColumn);
+
+     
 }
 
 function _createProductList() {
