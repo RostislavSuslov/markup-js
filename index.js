@@ -177,7 +177,9 @@ function _creatCatalogLayout(){
     leftColumn.className = 'col-lg-4 left-column';
     document.querySelector(".wrapper .row").appendChild(leftColumn);
 
-     
+    let rightColumn = document.createElement('div');
+    rightColumn.className = 'col-lg-8 right-column';
+    document.querySelector(".wrapper .row").appendChild(rightColumn);
 }
 
 function _createProductList() {
