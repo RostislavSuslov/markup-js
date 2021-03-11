@@ -169,16 +169,20 @@ function _creatWrapper() {
 };
 
 function _creatCatalogLayout(){
+    const container = document.createElement('div');
+    container.classList.add('container');
+    document.querySelector(".wrapper").appendChild(container);
+
     const row = document.createElement('div');
     row.classList.add('row');
-    document.querySelector(".wrapper").appendChild(row);
+    container.appendChild(row);
     
     let leftColumn = document.createElement('div');
-    leftColumn.className = 'col-lg-4 left-column';
+    leftColumn.className = 'col-md-4 col-lg-3 left-column';
     document.querySelector(".wrapper .row").appendChild(leftColumn);
 
     let rightColumn = document.createElement('div');
-    rightColumn.className = 'col-lg-8 right-column';
+    rightColumn.className = 'col-md-8 col-lg-9 right-column';
     document.querySelector(".wrapper .row").appendChild(rightColumn);
 }
 
