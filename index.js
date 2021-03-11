@@ -185,7 +185,7 @@ function _creatCatalogLayout(){
 function _createProductList() {
     const productLoyout = document.createElement('div');
     productLoyout.className = 'product-layout';
-    document.querySelector("body").appendChild(productLoyout);
+    document.querySelector(".right-column").appendChild(productLoyout);
 
     let productList = [{
             href: "#",
@@ -412,7 +412,7 @@ function _createFiltersColumn() {
     const filterGroup = document.createElement("div");
     filterGroup.className = "filters-group";
 
-    productLoyout.insertBefore(filtersContainer, productLoyout.firstChild);
+    document.querySelector(".left-column").insertBefore(filtersContainer, document.querySelector(".left-column").firstChild);
     filtersContainer.insertBefore(filterGroup, filtersContainer.firstChild);
 
     const filtersTitleArr = [];
