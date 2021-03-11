@@ -466,3 +466,5 @@ function _createFiltersColumn() {
     filterGroup.insertAdjacentHTML("afterbegin", joinFilters);
    
 };
+
+ 
