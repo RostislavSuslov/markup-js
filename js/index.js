@@ -446,7 +446,7 @@ function _createFiltersColumn() {
                 </h3>`;
     });
     
-    console.log(filtersTitleArrHtmL)
+   // console.log(filtersTitleArrHtmL)
 
     const joinFiltersTitle = filtersTitleArrHtmL.join(' ');
 
