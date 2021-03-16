@@ -421,49 +421,46 @@ function _createFiltersColumn() {
 
     const filtersTitleArr = [];
     const filtersItemsArr = [];
+
     var productBrand = document.querySelectorAll(".product-brand");
-
- 
-
     function allBrand() {
         productBrand.forEach(function (title) {
            var titleAttr = title.getAttribute("data-title");
            filtersTitleArr.unshift(titleAttr)
-            var title = title.textContent;
-            title.toString();
-            filtersItemsArr.unshift(title);
-        });
+           var title = title.textContent;
+           title.toString();
+           filtersItemsArr.unshift(title);
+          
+        }); 
     };
     allBrand();
 
     deleteDabble = filtersTitleArr.filter(function(item, pos) {
         return filtersTitleArr.indexOf(item) == pos;
-    })
+    });
 
     var filtersTitleArrHtmL = deleteDabble.map(function (filterTitleAttr) {
-        return `<h3 class="filter-tile">
+        return  `<h3 class="filter-tile">
                    ${filterTitleAttr}
-                </h3>`;
+                 </h3>`;
     });
     
    // console.log(filtersTitleArrHtmL)
 
-    const joinFiltersTitle = filtersTitleArrHtmL.join(' ');
-
-    filterGroup.insertAdjacentHTML("beforebegin", joinFiltersTitle);
-
-
+    const joinFiltersTitle = filtersTitleArrHtmL.join(' ');  
+    
     var htmlFilters = filtersItemsArr.map(function (filterItem) {
         return `<div class="filter-item-box">
-                   <input type="checkbox" id="item-${filterItem}"checked>
-                   <label for="item-${filterItem}">${filterItem}</label>
-                </div>`;
+        <input type="checkbox" id="item-${filterItem}"checked>
+        <label for="item-${filterItem}">${filterItem}</label>
+        </div>`;
     });
-
-
+    
+    
     const joinFilters = htmlFilters.join('');
-
+    
     filterGroup.insertAdjacentHTML("afterbegin", joinFilters);
+    filterGroup.insertAdjacentHTML("afterbegin", joinFiltersTitle);
    
 };
 

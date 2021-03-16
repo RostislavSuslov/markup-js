@@ -4,6 +4,37 @@
     --link-hover: rebeccapurple;
     --special-grey: #e5e6e8;
 }
+h1{
+    color: rgb(23, 38, 77);
+}
+h4{
+    color: green;
+}
+h6{
+    color: rebeccapurple;
+}
+
+.color-blue{
+    color: blue;
+    font-size: 80px;
+}
+
+.color-green {
+    color: green;
+}
+
+.animal {
+    color:black;
+    font-size: 80px;
+    opacity: 0.33;
+    text-shadow: 51px -48px 15px pink }
+/*  
+ 
+background-color
+
+*/
+
+.color-yellow
 
 * {
     margin: 0;
